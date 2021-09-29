@@ -1,0 +1,25 @@
+@model Gigya.Razor.Components.GigyaStore
+@Model.SdkScript();
+ 
+@* @{ *@
+@*     bool gigyaLoaded = false; *@
+@* *@
+@*    *@
+@*     *@
+@* } *@
+@* *@
+@* <script async src='https://cdns.@Model.Domain/js/gigya.js?apikey=@Model.ApiKey'></script>  *@
+@* <script> *@
+@*      if (window.gigya) @gigyaLoaded = true; *@
+@*      else window.onGigyaServiceReady += @gigyaLoaded = true *@
+@*    *@
+@* </script> *@
+@*        $1$ @Model.SdkScript() #1# *@
+@* @if (@gigyaLoaded) *@
+@* { *@
+@*     <div> *@
+@*        @Html.Display(@Model.Content)); *@
+@* *@
+@*     </div> *@
+@* *@
+@* } *@

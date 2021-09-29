@@ -1,0 +1,87 @@
+@using Microsoft.AspNetCore.Authentication
+@model Gigya.Razor.Components.GigyaScreen
+@inject IAuthenticationService AuthenticationService
+@{
+    var containerID = "gigya-screen-container";
+    var model = new { returnUrl = Model.OnSubmitUrl };
+}
+@* <meta http-equiv="refresh" content="0;url=@Model.OnSubmitUrl" data-url="@Model.OnSubmitUrl"> *@
+
+@ViewData.SdkScript();
+ @* <vc:gigya-store domain="@ViewData["gigya.domain"]" api-key="@ViewData["gigya.apiKey"]"></vc:gigya-store> *@
+ <div id="@containerID" style="flex: max-content; height: 600; width: auto"></div>
+@ViewData.Request("accounts.getJWT").Get().Uri().ToString()
+ @* @await Component.InvokeAsync("JwtDebug") *@
+
+@* <form id="exampleform" method="post" action="http://example.com/script.php"> *@
+@* </form> *@
+ 
+
+@* <form id="loginForm" asp-action="JwtLogin" asp-controller="Account"  > *@
+@*     $1$ <input id="jwt"/> #1# *@
+@* <input id="selfurl" name="selfurl" type="hidden" value=""> *@
+@* <input id="referrer" name="referrer" type="hidden" value=""> *@
+@* <input id="jwt" name="jwt" type="hidden" value=""> *@
+@* *@
+@* </form> *@
+@* <form id="challengeForm" asp-controller="External" *@
+@*       asp-action="Challenge" *@
+@*       asp-route-scheme="Gigya-JWT" *@
+@*       asp-route-returnUrl="@Model.OnSubmitUrl" *@
+@*       > *@
+@*      *@
+@* </form> *@
+  <form asp-action="Index">
+         <input type="hidden" asp-for="ReturnUrl" />
+</form>
+
+<script> 
+
+function submit(jwt){
+    document.getElementById("selfurl").value = document.URL;
+    document.getElementById("referrer").value = document.referrer;
+    document.getElementById("jwt").value = jwt; 
+    document.getElementById("loginForm").submit();
+}
+ 
+ async function getJwt() {
+     window.gigya.accounts.getJWT({callback: async (res)=>{
+         if (res.errorCode === 0){
+                 localStorage.setItem("auth.id_token", res.id_token);  
+                 
+            }
+         
+     }});}
+
+ async function checkLogin() {
+     window.gigya.accounts.getJWT({callback: async (res)=>{
+         if (res.errorCode === 0){
+                 localStorage.setItem("auth.id_token", res.id_token); 
+                // submit(jwt);
+                 
+                await fetch( "@Url.ActionLink("JwtLogin")";
+               // var res=await fetch( "@Url.ActionLink("JwtLogin")", {
+               //    method: "POST", 
+               //   headers: {Authorization: `Bearer ${res.id_token}`, 'Content-Type': 'application/json' } ,
+               //   body:JSON.stringify({returnUrl:'@Model.OnSubmitUrl' })
+               //
+               //   });
+               console.log(res);
+               //    if (res.status === 0){
+               //        // window.location.href ='@Model.OnSubmitUrl';
+               //       
+               //       }
+            }
+         
+         
+     }});}
+
+ const init = () => {
+     gigya.socialize.addEventHandlers({
+                  onLogin: getJwt
+              }); 
+   window.gigya.accounts.showScreenSet({ screenSet: '@Model.ScreenSet', startScreen: '@Model.StartScreen', containerID: '@containerID'  })
+ } 
+      if (window.gigya) init();   
+      const onGigyaServiceReady= init;  
+</script>

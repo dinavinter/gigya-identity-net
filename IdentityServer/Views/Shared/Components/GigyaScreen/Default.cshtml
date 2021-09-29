@@ -1,0 +1,16 @@
+@model Gigya.Razor.Components.GigyaScreen
+
+@{
+    var containerID = "gigya-screen-container";
+}
+ <vc:gigya-store domain="@ViewData["gigya.domain"]" api-key="@ViewData["gigya.apiKey"]"></vc:gigya-store>
+ <div id="@containerID" style="flex: max-content; height: 600; width: auto"></div>
+
+ 
+<script> 
+ const showScreen = () => {
+   window.gigya.accounts.showScreenSet({ screenSet: '@Model.ScreenSet', startScreen: '@Model.StartScreen', containerID: '@containerID' , onsubmit:@Model.OnSubmitUrl })
+ } 
+      if (window.gigya) showScreen();   
+      const onGigyaServiceReady= showScreen;  
+</script>

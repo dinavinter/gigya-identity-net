@@ -1,0 +1,32 @@
+@model Gigya.Razor.Components.AuthorizationPage
+
+@{
+    var containerID = "gigya-screen-container";
+}
+ <vc:gigya-store domain="@ViewData["gigya.domain"]" api-key="@ViewData["gigya.apiKey"]"></vc:gigya-store>
+ <div id="@containerID" style="flex: max-content; height: 600; width: auto"></div>
+
+   
+<script> 
+
+
+
+ function checkLogin() {
+     window.gigya.accounts.getJwt({callbacks: (res)=>{
+         if (res.errorCode === 0){
+                 localStorage.setItem("auth.id_token", res.id_token);
+                 fetch(@Model.AuthorizeUrl , {id_token: res.id_token})
+             }
+         
+         
+     }});}
+    
+     
+     
+        else gigya.socialize.addEventHandlers({
+             onLogin: checkLogin,
+         }); 
+       
+      if (window.gigya) checkLogin();   
+      const onGigyaServiceReady= checkLogin;  
+</script>

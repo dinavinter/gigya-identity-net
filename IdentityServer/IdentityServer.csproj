@@ -1,0 +1,101 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="IdentityServer4" Version="4.0.0" />
+
+        <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.9" />
+         <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Shared\Components\ActivityView\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Components\Authorization\AuthorizationPage.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Components\GigyaScreen\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Components\GigyaStore\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Components\LoginStatus\LoggedIn.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Components\LoginStatus\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Components\Authorization\AuthorizationPage.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Components\GigyaScreen\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Components\GigyaStore\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Components\LoginStatus\LoggedIn.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Components\LoginStatus\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\Components\Authorization\AuthorizationPage.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\Components\GigyaScreen\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\Components\GigyaStore\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\Components\LoginStatus\LoggedIn.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\Components\LoginStatus\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-background-sync.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-background-sync.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-background-sync.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-background-sync.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-broadcast-update.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-broadcast-update.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-broadcast-update.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-broadcast-update.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-cacheable-response.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-cacheable-response.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-cacheable-response.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-cacheable-response.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-core.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-core.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-core.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-core.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-expiration.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-expiration.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-expiration.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-expiration.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-navigation-preload.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-navigation-preload.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-navigation-preload.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-navigation-preload.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-offline-ga.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-offline-ga.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-offline-ga.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-offline-ga.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-precaching.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-precaching.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-precaching.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-precaching.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-range-requests.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-range-requests.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-range-requests.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-range-requests.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-recipes.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-recipes.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-recipes.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-recipes.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-routing.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-routing.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-routing.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-routing.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-strategies.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-strategies.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-strategies.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-strategies.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-streams.dev.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-streams.dev.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-streams.prod.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-streams.prod.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-sw.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-sw.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.dev.es5.mjs" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.dev.es5.mjs.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.dev.mjs" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.dev.mjs.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.dev.umd.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.dev.umd.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.prod.es5.mjs" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.prod.es5.mjs.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.prod.mjs" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.prod.mjs.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.prod.umd.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\workbox-v6.2.4\workbox-window.prod.umd.js.map" />
+    </ItemGroup>
+</Project>
