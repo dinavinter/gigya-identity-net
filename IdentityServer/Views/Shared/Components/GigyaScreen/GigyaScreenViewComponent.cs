@@ -28,5 +28,6 @@ namespace  Gigya.Razor.Components
             OnSubmitUrl = onSubmitUrl;
         }
 
+        public string ReturnUrl { get; set; }
     }
 }
